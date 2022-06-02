@@ -1,0 +1,8 @@
+Batch job failures in Business Portal Management System application.
+The Jobs are scheduled over the weekend to ensure a crtical delivery on Monday , a war room is also in place to ensure smooth processing of the batch jobs.
+More than 100 batch jobs are failing with the error ORA-01450 .
+A bridge is opened and critical incident management team is made aware , as this is S1 issue impacting more than 1000 orders.
+During the triage support team found that the values for customer name exceeded 4500 characters , which is allowed as per DB definition of the column .
+Suppport team recreated the scenario in UAT and prepared an alter statement that modifies the column data type and fixes the existing prod issue and was successfully tested in UAT.
+After taking all the required permissions from the call, the same alter statement has been executed in prod to prevent the batch failures .
+A problem record has been opened by support team to tag all the relevenat scenarios from production. As a permanent fix , Dev team is planning to increase teh data type field length to 6000.
